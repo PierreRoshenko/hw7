@@ -18,7 +18,7 @@ getMyTaxes.call(litva, salary);
 console.log('Task 2');
 
 function getMiddleTaxes() {
-    console.log(this.middleSalary * this.tax);
+    console.log(+(this.middleSalary * this.tax).toFixed(2));
 }
 
 getMiddleTaxes.call(ukraine);
@@ -45,7 +45,7 @@ function getMySalary(country) {
         const salary = Math.floor(Math.random() * (2000 - 1500)) + 1500;
         const mySalay = {
             salary: salary,
-            taxes: taxes,
+            taxes: +((taxes * salary).toFixed(2)),
             profit: +(salary - (taxes * salary)).toFixed(2)
         }
         console.log(mySalay);
